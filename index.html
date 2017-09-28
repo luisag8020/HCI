@@ -60,6 +60,27 @@
     font-size: large;
     font-family: "Arial"
   }
+    .link-indicator-4{
+    position: absolute;
+    top: 5%;
+    left: 65%;
+  }
+  .link-indicator-3{
+    position: absolute;
+    top: 5%;
+    left: 45%;
+  }
+  .link-indicator-2{
+    position: absolute;
+    top: 5%;
+    left: 25%;
+  }
+    .link-indicator {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+
+  }
   .caro-indicator  {
     position: absolute;
     top: 80%;
@@ -265,8 +286,13 @@ function startTimer(seconds) {
 
 
   <!--Stuff that is on the main page and is more static-->
-  <h3 class = "about-indicator">About </h3>
-  <h3 class = "link-indicator">Links </h3>
+    <h4 class = "about-indicator">About </h4>
+  <a href = # class = "link-indicator"><h4>GP 1: Project Proposal<h4> </a>
+  <a href = # class = "link-indicator-2"><h4>GP 2: User Research<h4> </a>
+  <a href = # class = "link-indicator-3"><h4>GP 3: Final Prototype<h4> </a>
+  <a href = # class = "link-indicator-4"><h4>GP 4: Final Product<h4> </a>
+
+  </div>
 
 
 
@@ -309,15 +335,6 @@ function startTimer(seconds) {
       
     </div>
 
-    <div class = "third-page" id = "links">
-      <div class = "up-arrow-indicator"><h2>^</h2></div>
-
-        <button class = "caro-button"><a href = #>GP 1 <br> Project Proposal </a> </button>
-        <button class = "caro-button"><a href = #>GP 2 <br> User Research</a> </button>
-        <button class = "caro-button"><a href = #>GP 3 <br> Final Prototype </a> </button>
-        <button class = "caro-button"><a href = #>GP 4 <br> Final Product </a> </button>
-
-    </div>
 
     <script>
     // scroll down function
@@ -327,11 +344,7 @@ function startTimer(seconds) {
             'slow');
     });
 
-    $(".link-indicator").click(function() {
-        $('html,body').animate({
-            scrollTop: $("#links").offset().top},
-            'slow');
-    });
+
     // scroll up function
     $(".up-arrow-indicator").click(function() {
         $('html,body').animate({
