@@ -11,7 +11,7 @@
 <style>
   /*background design */
   body {
-    
+
     background-color: #AED6F1;
     font-family: "Arial";
     text-align: left;
@@ -19,21 +19,38 @@
     margin: 0px;
   }
 
+  .link-indicator {
+    position: absolute;
+    top: 5%;
+    left: 70%;
+
+  }
   .page-header {
-    position: relative;
+    position: absolute;
     top: 20%;
     font-size: 600%;
   }
-
   .text-indicator{
-    position: relative;
-    top: 30%;
-    left: 45%;
+    position: absolute;
+    top: 45%;
+    left: 20%;
   }
-
+  .about-indicator {
+    position: absolute;
+    top: 5%;
+    left: 80%;
+  }
+  .up-arrow-indicator{
+    margin-left: 90%;
+  }
+  .title-indicator{
+    position: absolute;
+    top: 45%;
+    left: 30%;
+  }
   .caro-button {
     margin: 0 2px;
-    margin-bottom: 8px; 
+    margin-bottom: 8px;
     background-color: #5DADE2;
     opacity: 0.7;
     border-color: #5DADE2;
@@ -41,15 +58,13 @@
     padding: 20px;
     border-radius: 10px;
     font-size: large;
-    font-family: "Courier New"
+    font-family: "Arial"
   }
-
   .caro-indicator  {
     position: absolute;
     top: 80%;
     left: 20%;
   }
-
   /* Typewriter Animation */
   .typewriter h1 {
     overflow: hidden; /* Ensures the content is not revealed until the animation */
@@ -61,7 +76,6 @@
       typing 2.5s steps(30, end),
       blink-caret .75s step-end infinite;
   }
-
   .second-page {
     background-color: #5499C7;
     color: white;
@@ -77,7 +91,7 @@
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    background-image: url("holdinghands.jpg");
+
   }
   .slide {
     display: none;
@@ -95,14 +109,11 @@
     padding: 40px;
   }
 
-  
   .login-indicator {
     position: absolute;
     top: 55%;
     left: 41.5%;
   }
-  
-
 
 /*button and input design*/
 button:focus{
@@ -113,10 +124,23 @@ input:focus{
   opacity: 1;
   outline:0;
 }
-
 .login-caro {
   padding: 10px;
   margin-left: 30px;
+}
+a {
+  color: white;
+  outline:0;
+  text-decoration: none;
+}
+.column-1 {
+  position: absolute;
+  top: 160%;
+}
+.column-2 {
+  position: absolute;
+  top: 160%;
+  left: 45%;
 }
  .login {
    background-color: #f39c12;
@@ -126,7 +150,13 @@ input:focus{
    border-radius: 10px;
    font-size: larger;
 }
-
+.third-page {
+  padding-bottom: 500px;
+  padding-top: 10px;
+  margin-top: 0px;
+  padding-left: 4%;
+  text-align: center;
+}
 /* Typewriter Animation */
  .typewriter h1 {
    overflow: hidden; /* Ensures the content is not revealed until the animation */
@@ -135,10 +165,9 @@ input:focus{
    margin:10px 0 0 10px; /* Gives that scrolling effect as the typing happens */
    letter-spacing: .15em; /* Adjust as needed */
    animation:
-     typing 2.5s steps(30, end),
+     typing 2.0s steps(30, end),
      blink-caret .75s step-end infinite;
  }
-
 /* The typing effect */
 @keyframes typing {
   from { width: 0 }
@@ -153,102 +182,128 @@ input:focus{
 
 
 <script>
+<script>
+
 // change slide text (the typewriter stuff) on timers
 function changeSlide(int) {
-  document.getElementById("button-1").style.cssText = "background-color: #5DADE2; opacity: 0.7;"
-  document.getElementById("button-2").style.cssText = "background-color: #5DADE2; opacity: 0.7;";
-  document.getElementById("button-3").style.cssText = "background-color: #5DADE2; opacity: 0.7;";
-    document.getElementById("button-4").style.cssText = "background-color: #5DADE2; opacity: 0.7;";
-
   document.getElementById("slide-1").style.cssText = "display: none;";
   document.getElementById("slide-2").style.cssText = "display: none;";
   document.getElementById("slide-3").style.cssText = "display: none;";
-  document.getElementById("slide-4").style.cssText = "display: none;";
-
 
   if (int == 1){
-    document.getElementById("button-1").style.cssText = "background-color: #5499C7; opacity: 1;"
+
     document.getElementById("slide-1").style.cssText = "display: inline;";
+
   }
+
   if (int == 2){
-    document.getElementById("button-2").style.cssText = "background-color: #5499C7; opacity: 1;"
+
     document.getElementById("slide-2").style.cssText = "display: inline;";
+
   }
   if (int == 3){
-    document.getElementById("button-3").style.cssText = "background-color: #5499C7; opacity: 1;"
+
     document.getElementById("slide-3").style.cssText = "display: inline;";
   }
-  if (int == 4){
-    document.getElementById("button-4").style.cssText = "background-color: #5499C7; opacity: 1;"
-    document.getElementById("slide-4").style.cssText = "display: inline;";
-  }
   inty = int;
+
   startTimer(3500);
 }
 
 // the timer stuff
- var inty = 0;
- var timeouts = [];
- function startTimer(seconds) {
-           if (inty == 3) inty = 0;
-           inty++;
-           timeouts.push(setTimeout(function() {changeSlide(inty);}, seconds));
- }
- // manually change slide using the carousel buttons
- function manuChangeSlide(int) {
-     for (var i = 0; i < timeouts.length; i++) {
-         clearTimeout(timeouts[i]);
-     }
-     changeSlide(int);
+var inty = 0;
+var timeouts = [];
+function startTimer(seconds) {
+          if (inty == 3) inty = 0;
+          inty++;
+          timeouts.push(setTimeout(function() {changeSlide(inty);}, seconds));
+
   }
+
 
 </script>
 
 
-<body >
+
+  <body onload = "startTimer(2000)">
+
+  <!--This contains first half of the main page-->
+  <div class = "caro">
+
+  <!--Typewriting Text-->
+  <div class = "slide" id = "slide-1" style= "display: inline;">
+  <div class = "slide-1"> </div>
+  <div class = "text-indicator typewriter">
+  <h1 >Guardian: Feel safe.</h1>
+  </div>
+  </div>
+
+  <div class = "slide" id = "slide-2">
+  <div class = "slide-2"> </div>
+  <div class = "text-indicator typewriter">
+  <h1 >Guardian: Feel connected. </h1>
+  </div>
+  </div>
+
+  <div class = "slide" id = "slide-3">
+    <div class = "slide-3"> </div>
+  <div class = "text-indicator typewriter">
+  <h1>Guardian: Feel secure. </h1>
+  </div>
+  </div>
 
 
 
-    <!--This contains first half of the main page -->
-    <div class = "caro">
-<div class = "slide" id = "slide-1" style= "display: inline;">
-<div class = "slide-1"> </div>
+  <!--Stuff that is on the main page and is more static-->
+  <h3 class = "about-indicator">About </h3>
+  <h3 class = "link-indicator">Links </h3>
 
-</div>
-     <center>
-        <h1 class = "page-header">Guardian </h1>
-    </center>
-      
-      <button class = "caro-button"><a href = #>GP 1 <br> Project Proposal </a> </button>
-      <button class = "caro-button"><a href = #>GP 2 <br> User Research</a> </button>
-      <button class = "caro-button"><a href = #>GP 3 <br> Final Prototype </a> </button>
-      <button class = "caro-button"><a href = #>GP 4 <br> Final Product </a> </button>
+
+
+  </div>
+
+
+
+
+
     <!--About page-->
     <div class = "second-page" id = "about">
-
+<div class = "up-arrow-indicator"><h2>^</h2></div>
     <h1>About the Project</h1>
-      
-    <p>TESTING How does one stay safe? Parents teach their children “Stranger Danger” to keep them safe. College campuses populate their 
-      sidewalks with Blue Light Phones for increased security for students. Women traveling alone are told to carry pepper spray 
-      concealed as lipstick in their purse. But in spite of precautions and alertness, terrible incidents are still apt to happen. 
-      How can we increase protection and security when bad things happen? How can we give users tools for action in situations that 
-      might be out of their control? Can we utilize technology that individuals have on hand to keep them safe, through location pins, 
-      automatic calls to police, texts to emergency contacts, or other methods? Our goal is to conduct interviews and collect feedback 
+
+    <p>TESTING How does one stay safe? Parents teach their children “Stranger Danger” to keep them safe. College campuses populate their
+      sidewalks with Blue Light Phones for increased security for students. Women traveling alone are told to carry pepper spray
+      concealed as lipstick in their purse. But in spite of precautions and alertness, terrible incidents are still apt to happen.
+      How can we increase protection and security when bad things happen? How can we give users tools for action in situations that
+      might be out of their control? Can we utilize technology that individuals have on hand to keep them safe, through location pins,
+      automatic calls to police, texts to emergency contacts, or other methods? Our goal is to conduct interviews and collect feedback
       from late night runners to city travelers in order to design an effective safety technology.
     </p>
 
     <h1>About the Team </h1>
+    <div class = "column-1">
       <h2> Luisa Goytia </h2>
         <img src="luisagoytia.png" style="max-width: 20%; height: auto;">
-       
+
       <h2> Melana Hammel </h2>
         <img src="melanahammel.jpg" style="max-width: 20%; height: auto;">
-
+    </div>
+    <div class = "column-2">
       <h2> Grace Turner </h2>
         <img src="graceturner.jpg" style="max-width: 20%; height: auto;" >
 
       <h2> Jerry Wei </h2>
         <img src="jerrywei.png" style="max-width: 20%; height: auto;">
+    </div>
+    </div>
+
+    <div class = "third-page" id = "links">
+      <div class = "up-arrow-indicator"><h2>^</h2></div>
+
+        <button class = "caro-button"><a href = #>GP 1 <br> Project Proposal </a> </button>
+        <button class = "caro-button"><a href = #>GP 2 <br> User Research</a> </button>
+        <button class = "caro-button"><a href = #>GP 3 <br> Final Prototype </a> </button>
+        <button class = "caro-button"><a href = #>GP 4 <br> Final Product </a> </button>
 
     </div>
 
@@ -259,10 +314,16 @@ function changeSlide(int) {
             scrollTop: $("#about").offset().top},
             'slow');
     });
+
+    $(".link-indicator").click(function() {
+        $('html,body').animate({
+            scrollTop: $("#links").offset().top},
+            'slow');
+    });
     // scroll up function
     $(".up-arrow-indicator").click(function() {
         $('html,body').animate({
-            scrollTop: $(".about-indicator").offset().top},
+            scrollTop: $(".caro").offset().top},
             'slow');
     });
     // open popup function
