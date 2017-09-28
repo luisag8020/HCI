@@ -11,6 +11,7 @@
 <style>
   /*background design */
   body {
+    background-image: url("holdinghands.jpg");
     background-color: #AED6F1;
     font-family: "Arial";
     text-align: left;
@@ -20,7 +21,7 @@
 
   .page-header {
     position: relative;
-    top: 30%;
+    top: 20%;
     font-size: 600%;
   }
 
@@ -45,7 +46,7 @@
 
   .caro-indicator  {
     position: absolute;
-    top: 60%;
+    top: 80%;
     left: 20%;
   }
 
@@ -125,6 +126,18 @@ input:focus{
    font-size: larger;
 }
 
+/* Typewriter Animation */
+ .typewriter h1 {
+   overflow: hidden; /* Ensures the content is not revealed until the animation */
+   border-right: .1em solid #5DADE2; /* The typwriter cursor */
+   white-space: nowrap; /* Keeps the content on a single line */
+   margin:10px 0 0 10px; /* Gives that scrolling effect as the typing happens */
+   letter-spacing: .15em; /* Adjust as needed */
+   animation:
+     typing 2.5s steps(30, end),
+     blink-caret .75s step-end infinite;
+ }
+
 /* The typing effect */
 @keyframes typing {
   from { width: 0 }
@@ -171,6 +184,22 @@ function changeSlide(int) {
   inty = int;
   startTimer(3500);
 }
+
+// the timer stuff
+ var inty = 0;
+ var timeouts = [];
+ function startTimer(seconds) {
+           if (inty == 3) inty = 0;
+           inty++;
+           timeouts.push(setTimeout(function() {changeSlide(inty);}, seconds));
+ }
+ // manually change slide using the carousel buttons
+ function manuChangeSlide(int) {
+     for (var i = 0; i < timeouts.length; i++) {
+         clearTimeout(timeouts[i]);
+     }
+     changeSlide(int);
+  }
 
 </script>
 
