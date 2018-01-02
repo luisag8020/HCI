@@ -11,13 +11,39 @@
 <style>
   /*background design */
   body {
-
-    background-color: #AED6F1;
+    background-color: #49B59A;
+    /*#AED6F1*/
     font-family: "Arial";
     text-align: left;
     color: white;
     margin: 0px;
   }
+  
+  .firstRowImages{
+    float:left;
+    margin-left: 15%
+  }
+
+  .secondRowImages{
+    margin-left: 60%;
+  }
+
+  .photo{
+    border-radius: 50%;
+    width: 250px;
+    height: 275px;
+    margin-left:15%;
+  }
+
+  .names{
+    margin-left:25%;
+
+    }
+
+  .email{
+    margin-left:25%;
+
+    }
 
   .link-indicator {
     position: absolute;
@@ -37,7 +63,7 @@
   }
   .about-indicator {
     position: absolute;
-    top: 5%;
+    top: 6%;
     left: 80%;
   }
   .up-arrow-indicator{
@@ -60,25 +86,31 @@
     font-size: large;
     font-family: "Arial"
   }
+   
+   .link-indicator-5{
+    position: absolute;
+    top: 6%;
+    left: 73%;
+  } 
     .link-indicator-4{
     position: absolute;
-    top: 5%;
-    left: 65%;
+    top: 6%;
+    left: 59%;
   }
   .link-indicator-3{
     position: absolute;
-    top: 5%;
-    left: 45%;
+    top: 6%;
+    left: 44%;
   }
   .link-indicator-2{
     position: absolute;
-    top: 5%;
-    left: 25%;
+    top: 6%;
+    left: 30%;
   }
     .link-indicator {
     position: absolute;
-    top: 5%;
-    left: 5%;
+    top: 6%;
+    left: 15%;
 
   }
   .caro-indicator  {
@@ -213,7 +245,6 @@ a {
 
 
 <script>
-<script>
 
 // change slide text (the typewriter stuff) on timers
 function changeSlide(int) {
@@ -250,90 +281,106 @@ function startTimer(seconds) {
           timeouts.push(setTimeout(function() {changeSlide(inty);}, seconds));
 
   }
-
-
 </script>
 
 
 
-  <body onload = "startTimer(2000)">
+<body onload = "startTimer(2000)">
 
   <!--This contains first half of the main page-->
   <div class = "caro">
 
-  <!--Typewriting Text-->
-  <div class = "slide" id = "slide-1" style= "display: inline;">
-  <div class = "slide-1"> </div>
-  <div class = "text-indicator typewriter">
-  <h1 >Guardian: Feel safe.</h1>
+    <!--Typewriting Text-->
+    <div class = "slide" id = "slide-1" style= "display: inline;">
+    <div class = "slide-1"> </div>
+    <div class = "text-indicator typewriter">
+    <h1 >Guardian: Feel safe outside.</h1>
+    </div>
+    </div>
+
+    <div class = "slide" id = "slide-2">
+    <div class = "slide-2"> </div>
+    <div class = "text-indicator typewriter">
+    <h1 >Guardian: Feel connected. </h1>
+    </div>
+    </div>
+
+    <div class = "slide" id = "slide-3">
+      <div class = "slide-3"> </div>
+    <div class = "text-indicator typewriter">
+    <h1>Guardian: Feel secure. </h1>
+    </div>
+    </div>
+
+
+    <!--Stuff that is on the main page and is more static-->
+      <h4 class = "about-indicator">About </h4>
+    <a href = # class = "link-indicator"><h4>GP 1: Project Proposal<h4> </a>
+    <a href = # class = "link-indicator-2"><h4>GP 2: User Research<h4> </a>
+    <a href = # class = "link-indicator-3"><h4>GP 3: Final Prototype<h4> </a>
+    <a href = # class = "link-indicator-4"><h4>GP 4: Final Product<h4> </a>
+    <a href = "https://www.youtube.com/watch?v=DIq7YCeyLSI" class = "link-indicator-5"><h4>Video<h4> </a>
+    
   </div>
-  </div>
 
-  <div class = "slide" id = "slide-2">
-  <div class = "slide-2"> </div>
-  <div class = "text-indicator typewriter">
-  <h1 >Guardian: Feel connected. </h1>
-  </div>
-  </div>
-
-  <div class = "slide" id = "slide-3">
-    <div class = "slide-3"> </div>
-  <div class = "text-indicator typewriter">
-  <h1>Guardian: Feel secure. </h1>
-  </div>
-  </div>
-
-
-
-  <!--Stuff that is on the main page and is more static-->
-    <h4 class = "about-indicator">About </h4>
-  <a href = # class = "link-indicator"><h4>GP 1: Project Proposal<h4> </a>
-  <a href = # class = "link-indicator-2"><h4>GP 2: User Research<h4> </a>
-  <a href = # class = "link-indicator-3"><h4>GP 3: Final Prototype<h4> </a>
-  <a href = # class = "link-indicator-4"><h4>GP 4: Final Product<h4> </a>
-
-  </div>
-
-
-
-  </div>
 
 
 
 
 
     <!--About page-->
-    <div class = "second-page" id = "about">
-<div class = "up-arrow-indicator"><h2>^</h2></div>
-    <h1>About the Project</h1>
+<div class = "second-page" id = "about">
+  <div class = "up-arrow-indicator"><h2>^</h2></div>
+    <h1 style = "margin-left:42%">About Guardian</h1>
 
-    <p>How does one stay safe? Parents teach their children “Stranger Danger” to keep them safe. College campuses populate their
+    <p style="margin-left: 6%; margin-right:10%">How does one stay safe? Parents teach their children “Stranger Danger” to keep them safe. College campuses populate their
       sidewalks with Blue Light Phones for increased security for students. Women traveling alone are told to carry pepper spray
       concealed as lipstick in their purse. But in spite of precautions and alertness, terrible incidents are still apt to happen.
       How can we increase protection and security when bad things happen? How can we give users tools for action in situations that
       might be out of their control? Can we utilize technology that individuals have on hand to keep them safe, through location pins,
       automatic calls to police, texts to emergency contacts, or other methods? Our goal is to conduct interviews and collect feedback
       from late night runners to city travelers in order to design an effective safety technology.
-    </p>
+    </p><br><br>
 
-    <h1>The Team </h1>
-      <div class = "column-1">
-      <h2> Luisa Goytia </h2>
-        <img src="luisagoytia.png" style="max-width: 20%;  height: auto;">
 
-      <h2> Melana Hammel </h2>
-        <img src="melanahammel.jpg" style="max-width: 20%; height: auto;">
+    <div style= "margin-left:45%">
+      <h1>Our Team</h1><br><br>
+    </div>
+
+    <div>
+      <div class = "firstRowImages">
+        <div>
+          <img class = "photo" src="luisagoytia.png">
+          <h2 class = "names"> Luisa Goytia </h2>
+          <p>Luisa is a Senior in the Computer Science department. <br>
+          <a class="email" href="mailto:jmj5@princeton.edu">lgoytia@princeton.edu</a></p><br>
         </div>
-      <div class = "column-4">
-      <h2> Grace Turner </h2>
-        <img src="graceturner.jpg" style="max-width: 20%;height: auto;" >
 
-      <h2> Jerry Wei </h2>
-        <img src="jerrywei.png" style="max-width: 20%; height: auto;">
+        <div>    
+            <img class = "photo" src="melanahammel.jpg" >
+            <h2 class = "names"> Melana Hammel </h2>
+            <p >Melana is a Senior in the Computer Science department.<br>
+            <a class="email" href="mailto:mhammel@princeton.edu">mhammel@princeton.edu</a></p><br>
+        </div>
+      </div> 
+
+      <div class = "secondRowImages">
+        <div>  
+            <img class = "photo" src="graceturner.jpg" >
+            <h2 class = "names"> Grace Turner </h2>
+            <p>Grace is a Senior in the Computer Science department.<br>
+            <a class="email" href="mailto:gracekt@princeton.edu">gracekt@princeton.edu</a></p><br>
+          </div>
+
+          <div>
+            <img class = "photo" src="jerrywei.png" >
+            <h2 class = "names"> Jerry Wei </h2>
+            <p>Jerry is a Grad student in the Computer Science department.<br>
+            <a class="email" href="mailto:jywei@princeton.edu">jywei@princeton.edu</a></p>
+          </div>
+      </div>
     </div>
-    </div>
-      
-    </div>
+</div>
 
 
     <script>
